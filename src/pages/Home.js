@@ -1,7 +1,11 @@
 import { Header, Paragraph } from '../typography';
 import ImageCarousel from '../components/ImageCarousel';
+import HomeTabs from '../components/HomeTabs';
+import { useMediaPredicate } from 'react-media-hook';
+import HomeTabCollapse from '../components/HomeTabCollapse';
 
 const Home = () => {
+  const isDesktopSize = useMediaPredicate('(min-width: 768px)');
   return (
     <>
       <ImageCarousel />
@@ -14,6 +18,8 @@ const Home = () => {
         euismod, pretium lacinia magna. Donec mi orci, sollicitudin in luctus a,
         varius eget massa.
       </Paragraph>
+
+      {isDesktopSize ? <HomeTabs /> : <HomeTabCollapse />}
     </>
   );
 };

@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVimeo, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <div>
+      <Video>
         <Icon icon={faVimeo} />
         <Icon icon={faYoutube} />
-      </div>
+      </Video>
       <Text>hello@yay.com</Text>
       <Text>Copyright 2020</Text>
     </FooterContainer>
@@ -20,9 +20,19 @@ const FooterContainer = styled.div`
   justify-content: space-between;
   background-color: #fff;
   color: #767676;
-
-  margin-top: 50px;
+  margin-top: auto;
   padding: 10px 50px;
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+const Video = styled.div`
+  @media only screen and (max-width: 768px) {
+    grid-column: 1 / 3;
+    justify-self: center;
+  }
 `;
 
 const Icon = styled(FontAwesomeIcon)`
@@ -32,6 +42,7 @@ const Icon = styled(FontAwesomeIcon)`
 
 const Text = styled.div`
   font-size: 16px;
+  text-align: center;
 `;
 
 export default Footer;

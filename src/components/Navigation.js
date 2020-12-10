@@ -8,7 +8,7 @@ import { HOME, NEWS, CONTACT } from '../pages/pages';
 
 const Navigation = ({ page, onSetPage }) => {
   return (
-    <Navbar expand="md">
+    <NavigationBar expand="md">
       <Logo href="/">The YAY Company</Logo>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -28,7 +28,7 @@ const Navigation = ({ page, onSetPage }) => {
           <SearchButton variant="outline-success">GO</SearchButton>
         </Form>
       </Navbar.Collapse>
-    </Navbar>
+    </NavigationBar>
   );
 };
 
@@ -66,6 +66,12 @@ const SearchField = styled(FormControl)`
     color: #767676;
     font-size: 15px;
     border-radius: 0.25rem 0 0 0.25rem;
+  }
+`;
+
+const NavigationBar = styled(Navbar)`
+  #yay & {
+    background-color: #efefef;
   }
 `;
 

@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import Navigation from './components/Navigation';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import News from './pages/News';
@@ -34,10 +34,11 @@ const App = () => {
 };
 
 const Background = styled.div`
-  background: #efefef;
+  background: radial-gradient(#ffffff, #e5e5e5);
   min-height: 100vh;
   min-width: 100vw;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   #yay & * {
